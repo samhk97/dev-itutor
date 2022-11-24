@@ -1,0 +1,7 @@
+{
+  "name": "i-tutor",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
