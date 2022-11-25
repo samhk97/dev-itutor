@@ -1,0 +1,35 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-itutor-dev-172420-authRole",
+      "UnauthRoleArn": "arn:aws:iam::471465298932:role/amplify-itutor-dev-172420-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::471465298932:role/amplify-itutor-dev-172420-authRole",
+      "Region": "ap-southeast-1",
+      "DeploymentBucketName": "amplify-itutor-dev-172420-deployment",
+      "UnauthRoleName": "amplify-itutor-dev-172420-unauthRole",
+      "StackName": "amplify-itutor-dev-172420",
+      "StackId": "arn:aws:cloudformation:ap-southeast-1:471465298932:stack/amplify-itutor-dev-172420/c9151230-6bd9-11ed-bf94-02c1cae0c72c",
+      "AmplifyAppId": "dh66y0n298tck"
+    },
+    "categories": {
+      "function": {
+        "itutora1b69dd9": {
+          "deploymentBucketName": "amplify-itutor-dev-172420-deployment",
+          "s3Key": "amplify-builds/itutora1b69dd9-4c35466673593665754a-build.zip"
+        }
+      },
+      "api": {
+        "apic53a12d5": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "dh66y0n298tck",
+          "type": "manual"
+        }
+      },
+      "auth": {
+        "itutor": {}
+      }
+    }
+  }
+}

@@ -3,6 +3,8 @@ import { IonReactRouter } from '@ionic/react-router';
 import { Redirect, Route } from 'react-router-dom';
 import Menu from './components/Menu';
 import Page from './pages/Page';
+import Select_role from './pages/inital_account/select_role';
+import Initial_student from './pages/inital_account/inital_student';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -11,6 +13,7 @@ import '@ionic/react/css/core.css';
 import '@ionic/react/css/normalize.css';
 import '@ionic/react/css/structure.css';
 import '@ionic/react/css/typography.css';
+import {withAuthenticator} from '@aws-amplify/ui-react';
 
 /* Optional CSS utils that can be commented out */
 import '@ionic/react/css/padding.css';
@@ -19,6 +22,7 @@ import '@ionic/react/css/text-alignment.css';
 import '@ionic/react/css/text-transformation.css';
 import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
+import "@aws-amplify/ui-react/styles.css";
 
 /* Theme variables */
 import './theme/variables.css';
@@ -38,6 +42,13 @@ const App: React.FC = () => {
             <Route path="/page/:name" exact={true}>
               <Page />
             </Route>
+            {/*------------------ inital account ------------------*/}
+            <Route path="/pages/initial_account/select_role" exact={true}>
+              <Select_role />
+            </Route>
+            <Route path="/pages/initial_account/student" exact={true}>
+              <Initial_student />
+            </Route>
           </IonRouterOutlet>
         </IonSplitPane>
       </IonReactRouter>
@@ -45,4 +56,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default withAuthenticator(App,{socialProviders:['google']});
