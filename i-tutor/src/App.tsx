@@ -13,7 +13,7 @@ import '@ionic/react/css/core.css';
 import '@ionic/react/css/normalize.css';
 import '@ionic/react/css/structure.css';
 import '@ionic/react/css/typography.css';
-import {withAuthenticator} from '@aws-amplify/ui-react';
+
 
 /* Optional CSS utils that can be commented out */
 import '@ionic/react/css/padding.css';
@@ -22,14 +22,22 @@ import '@ionic/react/css/text-alignment.css';
 import '@ionic/react/css/text-transformation.css';
 import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
-import "@aws-amplify/ui-react/styles.css";
+
 
 /* Theme variables */
 import './theme/variables.css';
+//*--------aws
+import "@aws-amplify/ui-react/styles.css";
+import {withAuthenticator} from '@aws-amplify/ui-react';
+import { Amplify } from 'aws-amplify';
+import awsExports from './aws-exports';
+Amplify.configure(awsExports);
 
 setupIonicReact();
 
-const App: React.FC = () => {
+const App: React.FC = (user) => {
+  console.log('app');
+  console.log(user);
   return (
     <IonApp>
       <IonReactRouter>
