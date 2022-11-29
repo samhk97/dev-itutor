@@ -1,19 +1,4 @@
 export type AmplifyDependentResourcesAttributes = {
-    "function": {
-        "itutora1b69dd9": {
-            "Name": "string",
-            "Arn": "string",
-            "Region": "string",
-            "LambdaExecutionRole": "string"
-        }
-    },
-    "api": {
-        "apic53a12d5": {
-            "RootUrl": "string",
-            "ApiName": "string",
-            "ApiId": "string"
-        }
-    },
     "auth": {
         "itutor": {
             "IdentityPoolId": "string",

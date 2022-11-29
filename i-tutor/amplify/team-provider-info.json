@@ -12,15 +12,6 @@
       "AmplifyAppId": "dh66y0n298tck"
     },
     "categories": {
-      "function": {
-        "itutora1b69dd9": {
-          "deploymentBucketName": "amplify-itutor-dev-172420-deployment",
-          "s3Key": "amplify-builds/itutora1b69dd9-4c35466673593665754a-build.zip"
-        }
-      },
-      "api": {
-        "apic53a12d5": {}
-      },
       "hosting": {
         "amplifyhosting": {
           "appId": "dh66y0n298tck",
@@ -29,6 +20,9 @@
       },
       "auth": {
         "itutor": {}
+      },
+      "function": {
+        "getUserData": {}
       }
     }
   }

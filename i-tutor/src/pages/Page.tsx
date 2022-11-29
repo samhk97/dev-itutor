@@ -1,8 +1,9 @@
-import { IonPage,IonGrid,IonRow,IonCol, IonImg, IonHeader, IonTitle, IonContent} from '@ionic/react';
-import React from 'react';
-
+import { IonPage,IonGrid,IonRow,IonCol, IonImg, IonHeader, IonTitle, IonContent, IonButton} from '@ionic/react';
+import React ,{useContext}from 'react';
+import { UserContext } from '../userContext';
 
 const Page: React.FC = () => {
+  const user_data = useContext(UserContext);
   return (
     <IonPage>
       <IonHeader>
@@ -12,8 +13,9 @@ const Page: React.FC = () => {
         <IonGrid>
           <IonRow>
             <IonCol>             
-                123
+                123<IonButton></IonButton>
             </IonCol>
+            <IonCol>{user_data}</IonCol>
           </IonRow>
         </IonGrid>
       </IonContent>

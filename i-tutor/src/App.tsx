@@ -1,10 +1,13 @@
 import { IonApp, IonRouterOutlet, IonSplitPane, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { Redirect, Route } from 'react-router-dom';
+import { UserContext } from './userContext';
+/* Pages */
 import Menu from './components/Menu';
 import Page from './pages/Page';
 import Select_role from './pages/inital_account/select_role';
 import Initial_student from './pages/inital_account/inital_student';
+import CreateUser from './pages/user/create_user';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -35,31 +38,37 @@ Amplify.configure(awsExports);
 
 setupIonicReact();
 
-const App: React.FC = (user) => {
+const App: React.FC = () => {
   console.log('app');
-  console.log(user);
+  console.log(Amplify.Auth.user);
+  const user =Amplify.Auth;
   return (
     <IonApp>
-      <IonReactRouter>
-        <IonSplitPane contentId="main">
-          <Menu />
-          <IonRouterOutlet id="main">
-            <Route path="/" exact={true}>
-              <Redirect to="/page/Inbox" />
-            </Route>
-            <Route path="/page/:name" exact={true}>
-              <Page />
-            </Route>
-            {/*------------------ inital account ------------------*/}
-            <Route path="/pages/initial_account/select_role" exact={true}>
-              <Select_role />
-            </Route>
-            <Route path="/pages/initial_account/student" exact={true}>
-              <Initial_student />
-            </Route>
-          </IonRouterOutlet>
-        </IonSplitPane>
-      </IonReactRouter>
+      <UserContext.Provider value={''}>
+        <IonReactRouter>
+          <IonSplitPane contentId="main">
+            <Menu />
+            <IonRouterOutlet id="main">
+              <Route path="/" exact={true}>
+                <Redirect to="/page/Inbox" />
+              </Route>
+              <Route path="/page/:name" exact={true}>
+                <Page />
+              </Route>
+              {/*------------------ inital account ------------------*/}
+              <Route path="/pages/createuser" exact={true}>
+                <CreateUser />
+              </Route>
+              <Route path="/pages/initial_account/select_role" exact={true}>
+                <Select_role />
+              </Route>
+              <Route path="/pages/initial_account/student" exact={true}>
+                <Initial_student />
+              </Route>
+            </IonRouterOutlet>
+          </IonSplitPane>
+        </IonReactRouter>
+      </UserContext.Provider>
     </IonApp>
   );
 };
