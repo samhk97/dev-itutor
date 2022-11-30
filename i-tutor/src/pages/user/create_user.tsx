@@ -7,6 +7,7 @@ const CreateUser: React.FC = () => {
     const [username,setUsername] = useState('');
     const [password,setPassword] = useState('');
     async function signUp() {
+      const attributes={role:'student'};
         try {
             const { user } = await Auth.signUp({
                 username,

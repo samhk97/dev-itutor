@@ -32,16 +32,21 @@ import './theme/variables.css';
 //*--------aws
 import "@aws-amplify/ui-react/styles.css";
 import {withAuthenticator} from '@aws-amplify/ui-react';
-import { Amplify } from 'aws-amplify';
+import { Amplify,API } from 'aws-amplify';
 import awsExports from './aws-exports';
 Amplify.configure(awsExports);
 
 setupIonicReact();
+function user_data(){
+
+  console.log('123');
+}
 
 const App: React.FC = () => {
   console.log('app');
-  console.log(Amplify.Auth.user);
-  const user =Amplify.Auth;
+  console.log(Amplify.Auth.user.username);
+  const user_name =Amplify.Auth.user.username;
+  user_data();
   return (
     <IonApp>
       <UserContext.Provider value={''}>
