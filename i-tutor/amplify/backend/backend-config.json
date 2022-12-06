@@ -1,6 +1,27 @@
 {
-  "function": {},
-  "api": {},
+  "function": {
+    "GetUserData": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "api": {
+    "getUserData": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "GetUserData",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ]
+    }
+  },
   "hosting": {
     "amplifyhosting": {
       "service": "amplifyhosting",

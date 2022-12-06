@@ -22,6 +22,12 @@
         "itutor": {}
       },
       "function": {
+        "GetUserData": {
+          "deploymentBucketName": "amplify-itutor-dev-172420-deployment",
+          "s3Key": "amplify-builds/GetUserData-6e766a4d424c47563457-build.zip"
+        }
+      },
+      "api": {
         "getUserData": {}
       }
     }
